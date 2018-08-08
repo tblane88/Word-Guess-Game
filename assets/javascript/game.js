@@ -1,6 +1,11 @@
 $(document).ready(function() {
-
+    var guessedLetters = [];
     $(document).keyup(function(event) {
-        $("#lettersGuessed").text(event.key);
+
+        if($.inArray(event.key, guessedLetters) == -1){
+            guessedLetters.push(event.key);
+            $("#lettersGuessed").text(guessedLetters.toString());
+        }
+
     });
 });
