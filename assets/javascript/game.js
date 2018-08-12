@@ -4,13 +4,30 @@ $(document).ready(function() {
     // variable to keep a count of the users wins
     var winsCounter = 0;
     var guessesRemaining = 12;
+    // making everything a global variable
+    var rickMorty = ["_","_","_","_","&nbsp;","_","_","_","&nbsp;","_","_","_","_","_"];
+    var answer0 = ["R","i","c","k","&nbsp;","a","n","d","&nbsp;","M","o","r","t","y"];
+
+    var friends = ["_","_","_","_","_","_","_"];
+    var answer1 = ["F","r","i","e","n","d","s"];
+
+    var modernFamily = ["_","_","_","_","_","_","&nbsp;","_","_","_","_","_","_"];
+    var answer2 = ["M","o","d","e","r","n","&nbsp;","F","a","m","i","l","y"];
+
+    var theSimpsons = ["_","_","_","&nbsp;","_","_","_","_","_","_","_","_"];
+    var answer3 = ["T","h","e","&nbsp;","S","i","m","p","s","o","n","s"];
+
+    var theOffice = ["_","_","_","&nbsp;","_","_","_","_","_","_"];
+    var answer4 = ["T","h","e","&nbsp;","O","f","f","i","c","e"];
     $("#guesses").text(guessesRemaining);
+    $("#wins").text(winsCounter);
+
     
     
     var choices = [];
     choices[0] = function(){
-            var rickMorty = ["_","_","_","_","&nbsp;","_","_","_","&nbsp;","_","_","_","_","_"];
-            var answer0 = ["R","i","c","k","&nbsp;","a","n","d","&nbsp;","M","o","r","t","y"];
+            rickMorty = ["_","_","_","_","&nbsp;","_","_","_","&nbsp;","_","_","_","_","_"];
+            answer0 = ["R","i","c","k","&nbsp;","a","n","d","&nbsp;","M","o","r","t","y"];
             guessedLetters = [];
             guessesRemaining = 12;
 
@@ -32,6 +49,9 @@ $(document).ready(function() {
                     // changes image to the winning answes image
                     $("#winningImage").attr("src", "assets/images/RickMorty.jpg");
                     audioElement.play();
+                    // resets the array
+                    rickMorty = ["_","_","_","_","&nbsp;","_","_","_","&nbsp;","_","_","_","_","_"];
+
 
                     
 
@@ -81,16 +101,14 @@ $(document).ready(function() {
             
             
 
-            rickMorty = ["_","_","_","_","&nbsp;","_","_","_","&nbsp;","_","_","_","_","_"];
 
         };
 
     choices[1] = function(){
-            var friends = ["_","_","_","_","_","_","_"];
-            var answer1 = ["F","r","i","e","n","d","s"];
+            friends = ["_","_","_","_","_","_","_"];
+            answer1 = ["F","r","i","e","n","d","s"];
             guessedLetters = [];
             guessesRemaining = 12;
-            friends = ["_","_","_","_","_","_","_"];
 
             // jquery text
             $("#currentWord").html(friends.join(" "));
@@ -111,6 +129,8 @@ $(document).ready(function() {
                     // changes image to the winning answes image
                     $("#winningImage").attr("src", "assets/images/Friends.jpg");
                     audioElement.play();
+                    friends = ["_","_","_","_","_","_","_"];
+
 
                     
 
@@ -151,11 +171,10 @@ $(document).ready(function() {
         };
 
     choices[2] = function(){
-            var modernFamily = ["_","_","_","_","_","_","&nbsp;","_","_","_","_","_","_"];
-            var answer2 = ["M","o","d","e","r","n","&nbsp;","F","a","m","i","l","y"];
+            modernFamily = ["_","_","_","_","_","_","&nbsp;","_","_","_","_","_","_"];
+            answer2 = ["M","o","d","e","r","n","&nbsp;","F","a","m","i","l","y"];
             guessedLetters = [];
             guessesRemaining = 12;
-            modernFamily = ["_","_","_","_","_","_","&nbsp;","_","_","_","_","_","_"];
 
             // jquery text
             $("#currentWord").html(modernFamily.join(" "));
@@ -176,6 +195,9 @@ $(document).ready(function() {
                     // changes image to the winning answes image
                     $("#winningImage").attr("src", "assets/images/ModernFamily.jpg");
                     audioElement.play();
+                     modernFamily = ["_","_","_","_","_","_","&nbsp;","_","_","_","_","_","_"];
+
+
 
                     
 
@@ -236,11 +258,10 @@ $(document).ready(function() {
         };
         
     choices[3] = function(){
-            var theSimpsons = ["_","_","_","&nbsp;","_","_","_","_","_","_","_","_"];
-            var answer3 = ["T","h","e","&nbsp;","S","i","m","p","s","o","n","s"];
+            theSimpsons = ["_","_","_","&nbsp;","_","_","_","_","_","_","_","_"];
+            answer3 = ["T","h","e","&nbsp;","S","i","m","p","s","o","n","s"];
             guessedLetters = [];
             guessesRemaining = 12;
-            theSimpsons = ["_","_","_","&nbsp;","_","_","_","_","_","_","_","_"];
 
             // jquery text
             $("#currentWord").html(theSimpsons.join(" "));
@@ -261,6 +282,9 @@ $(document).ready(function() {
                     // changes image to the winning answes image
                     $("#winningImage").attr("src", "assets/images/theSimpsons.jpeg");
                     audioElement.play();
+                    theSimpsons = ["_","_","_","&nbsp;","_","_","_","_","_","_","_","_"];
+
+
 
                     
 
@@ -318,11 +342,10 @@ $(document).ready(function() {
         };    
         
     choices[4] = function(){
-            var theOffice = ["_","_","_","&nbsp;","_","_","_","_","_","_"];
-            var answer4 = ["T","h","e","&nbsp;","O","f","f","i","c","e"];
+            theOffice = ["_","_","_","&nbsp;","_","_","_","_","_","_"];
+            answer4 = ["T","h","e","&nbsp;","O","f","f","i","c","e"];
             guessedLetters = [];
             guessesRemaining = 12;
-            theOffice = ["_","_","_","&nbsp;","_","_","_","_","_","_"];
 
 
             // jquery text
@@ -344,6 +367,8 @@ $(document).ready(function() {
                     // changes image to the winning answes image
                     $("#winningImage").attr("src", "assets/images/theOffice.jpg");
                     audioElement.play();
+                    theOffice = ["_","_","_","&nbsp;","_","_","_","_","_","_"];
+
 
                     
 
@@ -397,12 +422,32 @@ $(document).ready(function() {
         };  
         
         $("#winningImage").on("click", function() {
+            // Resets the choices array
+            //  modernFamily = ["_","_","_","_","_","_","&nbsp;","_","_","_","_","_","_"];
+            //  friends = ["_","_","_","_","_","_","_"];
+            //  rickMorty = ["_","_","_","_","&nbsp;","_","_","_","&nbsp;","_","_","_","_","_"];
+            //  theSimpsons = ["_","_","_","&nbsp;","_","_","_","_","_","_","_","_"];
+            //  theOffice = ["_","_","_","&nbsp;","_","_","_","_","_","_"];
+            //  refreshes the guesses remaining
+             guessesRemaining = 12;
+             $("#guesses").text(guessesRemaining);
+            //  refreshes the letters guessed
+             guessedLetter = [];
+             $("#lettersGuessed").text(guessedLetters.toString());
+             console.log($("#lettersGuessed").text(guessedLetters.toString()));
+
+
+
+
+
+
+            for(var i = 0; i < 15; i++) {
             
             var g = Math.floor(Math.random() * choices.length);
             
             
                 choices[g]();
-
+            };
 
         });
 
